@@ -1,0 +1,161 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
+    font-family: cursive;
+    margin: 0px;
+    padding: 0px;
+}
+
+nav {
+    background-image: linear-gradient(to right, #a27233, #cd5a00, #cd5a00, #cd5a00, #a27233);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 32px;
+}
+
+.logo {
+    width: 250px;
+}
+
+.logo img {
+    width: 100px;
+    height: 100px;
+    border-radius: 20%;
+    transition: transform 0.5s;
+}
+
+.logo img:hover {
+    transform: scale(1.25);
+}
+
+nav .menu {
+    font-size: 24px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+    color: white;
+}
+
+nav .menu a {
+    text-decoration: none;
+    color: white;
+    padding: 16px;
+    border-radius: 20px;
+    /* transition: background-color 0.4s; */
+}
+
+nav .menu a.active-menu-link {
+    font-weight: bold;
+}
+
+nav .menu a:hover, nav .menu a.active-menu-link {
+    text-decoration: underline;
+    color: black;
+    background-color: white;
+}
+
+nav .phone-contact {
+    width: 250px;
+    font-size: 34px;
+}
+
+main {
+    padding: 0;
+}
+
+.content {
+    border-top: 2px solid white;
+    border-bottom: 2px solid white;
+    color: white;
+    background-color: #561503;
+}
+
+footer {
+    background-color: #561503;
+    color: white;
+    padding: 16px 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: stretch;
+}
+
+footer > * {
+    border-left: 4px solid white;
+    padding-left: 40px;
+    height: 100%;
+}
+
+footer ul {
+    list-style: none;
+    padding: 0px;
+}
+
+.footer-menu ul {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.footer-menu ul li a {
+    color: white;
+    text-decoration: underline;
+    padding: 4px 8px;
+    border-radius: 8px;
+}
+
+.footer-menu ul li a:hover {
+    background-color: white;
+    color: black;
+}
+
+.footer-link {
+    text-align: right;
+    align-self: center;
+    border-left: none;
+}
+
+.social-media-links {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+}
+
+.ico-facebook {
+    content: url("./images/icons/facebook_32.png");
+}
+
+.ico-instagram {
+    content: url("./images/icons/instagram_32.png");
+}
+
+.ico-mail {
+    content: url("./images/icons/mail_32.png");
+}
+
+.ico-youtube {
+    content: url("./images/icons/youtube_32.png");
+}
+
+.ico-telephone {
+    content: url("./images/icons/telephone_32.png");
+}
+
+.ico {
+    transition: transform 0.25s;
+}
+
+.ico:hover {
+    transform: scale(1.3);
+}

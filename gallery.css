@@ -1,0 +1,29 @@
+.content {
+    padding: 20px;
+    background-color: #561503;
+}
+
+.content > h1 {
+    text-align: center;
+    margin-top: 0px;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    justify-content: space-between;
+}
+
+.gallery-card {
+    background-color: rgb(255 255 255 / 85%);
+    width: 450px;
+    height: 450px;
+}
+
+.gallery-card img {
+    width: 400px;
+    height: 400px;
+    position: relative;
+    top: 25px;
+    left: 25px;
+}

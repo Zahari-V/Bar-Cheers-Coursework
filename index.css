@@ -1,0 +1,35 @@
+.content {
+    background-color: transparent !important;
+}
+
+.content article {
+    position: relative;
+    height: 600px;
+    border-bottom: 2px solid white;
+}
+
+.content article .main-card {
+    background-color: rgb(255 255 255 / 75%);
+    color: black;
+    width: 600px;
+    padding: 20px;
+    position: absolute;
+    top: 60px;
+}
+
+.content article:nth-child(odd) .main-card {
+    left: 60px;
+}
+
+.content article:nth-child(even) .main-card {
+    right: 60px;
+}
+
+.content img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
