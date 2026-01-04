@@ -1,29 +1,54 @@
-.content {
-    padding: 20px;
-    background-color: #561503;
-}
-
-.content > h1 {
-    text-align: center;
-    margin-top: 0px;
-}
-
-.gallery {
+#gallery {
     display: grid;
     grid-template-columns: auto auto auto;
-    justify-content: space-between;
-}
-
-.gallery-card {
-    background-color: rgb(255 255 255 / 85%);
-    width: 450px;
-    height: 450px;
+    justify-content: space-evenly;
+    row-gap: 20px;
 }
 
 .gallery-card img {
-    width: 400px;
-    height: 400px;
-    position: relative;
-    top: 25px;
-    left: 25px;
+    width: 450px;
+    height: 450px;
+    border: 16px solid white;
+}
+
+.gallery-card img:hover {
+    cursor: pointer;
+}
+
+#gallery-picker {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 80%);
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    padding: 60px 200px;
+}
+
+#picture-control {
+    display: grid;
+    grid-template-columns: 60px auto 60px;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+#picture-control span {
+    padding: 10px;
+    margin: 8px;
+    font-size: 48px;
+    text-align: center;
+}   
+
+#picture-control span:hover {
+    cursor: pointer;
+    background-color: white;
+    color: black;
+}
+
+#picture-control img {
+    width: 1080px;
+    height: 80vh;
 }
