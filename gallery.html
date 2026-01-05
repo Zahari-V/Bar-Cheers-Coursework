@@ -3,15 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="site.css">
-    <link rel="stylesheet" href="gallery.css">
+    <link rel="stylesheet" href="css/site.css">
+    <link rel="stylesheet" href="css/gallery.css">    
+    <link rel="icon" href="images/icons/beer_favicon.png">
     <title>Бар - наздраве</title>
 </head>
 <body>
     <nav>
         <div class="logo">
             <a href="index.html">
-                <img src="./images/logo - Copy.jpg" alt="Лого" />
+                <img src="./images/logo.jpg" alt="Лого" />
             </a>
         </div>
         <ul class="menu">
@@ -43,29 +44,36 @@
     </nav>
     <main>
         <section id="content">
-            <h1>Галерия</h1>
+            <header>
+                <h1>Галерия</h1>
+            </header>
             <div id="gallery">
                 <div class="gallery-card">
-                    <img src="images/bar.jpg" alt="Бар">
+                    <img src="images/gallery/old-fashioned-cocktail.jpg" alt="Old fashioned">
                 </div>
                 <div class="gallery-card">
-                    <img src="images/bartender.jpg" alt="Барман">
+                    <img src="images/gallery/mai-tai.jpg" alt="Mai tai">
                 </div>
                 <div class="gallery-card">
-                    <img src="images/coctails.jpg" alt="Коктейли">
+                    <img src="images/gallery/angostura-colada.jpg" alt="Angostura colada">
                 </div>
                 <div class="gallery-card">
-                    <img src="images/bar.jpg" alt="Бар">
+                    <img src="images/gallery/recipe-legacy.jpg" alt="Legacy coctail">
                 </div>
                 <div class="gallery-card">
-                    <img src="images/bartender.jpg" alt="Барман">
+                    <img src="images/gallery/colletti_royale.jpg" alt="Colletti royale">
                 </div>
                 <div class="gallery-card">
-                    <img src="images/coctails.jpg" alt="Коктейли">
+                    <img src="images/gallery/flaming-dr-pepper-shots.jpg" alt="Flaming dr. pepper shot">
                 </div>
             </div>
         </section>
     </main>
+    <section id="sponsor-section">
+        <img src="images/sponsors/monin.png" alt="Monin sponsor">
+        <img src="images/sponsors/bushmills.png" alt="Bushmills sponsor">
+        <img src="images/sponsors/cola.png" alt="Cola sponsor">
+    </section>
     <footer>
         <div class="footer-menu">
             <ul>
@@ -88,106 +96,38 @@
         </div>
         <div class="working-time">
             <h3>Работно време:</h3>
-            <div>Понеделни - Петък 14:00 - 00:00</div>
-            <div>Събота - Неделя 12:00 - 00:00</div>
+            <p>
+                Понеделни - Петък 14:00 - 00:00
+                <br>
+                Събота - Неделя 12:00 - 00:00
+            </p>
         </div>
         <div class="working-place">
             <h3>Адрес:</h3>
-            <div>Бар - Наздраве</div>
-            <div>гр.Видин - ул. Баба Вида 18</div>
+            <p>
+                Бар - Наздраве
+                <br>
+                гр.Видин - ул. Баба Вида 18
+            </p>
         </div>
         <div class="footer-link">
             <ul class="social-media-links">
-                <li><a href="https://facebook.com"><i class="ico ico-facebook"></i></a></li>
-                <li><a href="https://instagram.com"><i class="ico ico-instagram"></i></a></li>
+                <li><a href="https://facebook.com" target="_blank"><i class="ico ico-facebook"></i></a></li>
+                <li><a href="https://instagram.com" target="_blank"><i class="ico ico-instagram"></i></a></li>
                 <li><a href="contact.html#contact-form-wrapper"><i class="ico ico-mail"></i></a></li>
-                <li><a href="https://youtube.com"><i class="ico ico-youtube"></i></a></li>
+                <li><a href="https://youtube.com" target="_blank"><i class="ico ico-youtube"></i></a></li>
             </ul>
             <span class="copyright">&#169; Copyright 2026</span>
         </div>
     </footer>
     <div id="gallery-picker">
+        <span id="close-gallery-picker">&#10006;</span>
         <div id="picture-control">
-            <div>
-                <span id="move-to-left-picture">&lt;</span>
-            </div>
+            <div><span id="move-to-left-picture">&lt;</span></div>
             <img src="images/bar.jpg" alt="selected-picture" />
-            <div>
-                <span id="move-to-right-picture">&gt;</span>
-            </div>
+            <div><span id="move-to-right-picture">&gt;</span></div>
         </div>
     </div>
-    <script>
-        const images = document.querySelectorAll('#content img');
-        
-        for (const img of images) {
-            img.addEventListener('click', (e) => {
-                const pictureControl = document.querySelector('#picture-control img');
-                pictureControl.src = e.target.src;
-                pictureControl.alt = e.target.alt;
-                e.target.setAttribute('currentSelected', true);
-
-                checkNextAndPreviousButtons(e.target);
-
-                const galleryPicker = document.getElementById('gallery-picker');
-                galleryPicker.style.display = "block";
-            });
-        }
-
-        document.getElementById('gallery-picker').addEventListener('click', (e) => {
-            if (e.target === e.currentTarget) {
-                document.querySelector('#gallery img[currentSelected="true"]').removeAttribute('currentSelected');
-                e.target.style.display = "none";
-            }
-        });
-
-        document.getElementById('move-to-left-picture').addEventListener('click', (e) => {
-            const selectedPicture = document.querySelector('#gallery img[currentSelected="true"]');
-            selectedPicture.removeAttribute('currentSelected');
-
-            const previousImg = selectedPicture
-                .parentElement
-                .previousElementSibling
-                .getElementsByTagName("img")[0];
-
-            checkNextAndPreviousButtons(previousImg);
-
-            const pictureControl = document.querySelector('#picture-control img');
-            pictureControl.src = previousImg.src;
-            pictureControl.alt = previousImg.alt;
-            previousImg.setAttribute('currentSelected', true);
-        });
-
-        document.getElementById('move-to-right-picture').addEventListener('click', (e) => {
-            const selectedPicture = document.querySelector('#gallery img[currentSelected="true"]');
-            selectedPicture.removeAttribute('currentSelected');
-
-            const nextImg = selectedPicture
-                .parentElement
-                .nextElementSibling
-                .getElementsByTagName("img")[0];
-
-            checkNextAndPreviousButtons(nextImg);
-
-            const pictureControl = document.querySelector('#picture-control img');
-            pictureControl.src = nextImg.src;
-            pictureControl.alt = nextImg.alt;
-            nextImg.setAttribute('currentSelected', true);
-        });
-
-        function checkNextAndPreviousButtons(element) {
-            if (!element.parentElement.previousElementSibling) {
-                document.getElementById('move-to-left-picture').style.display = "none";
-            } else {
-                document.getElementById('move-to-left-picture').style.display = "block";
-            }
-
-            if (!element.parentElement.nextElementSibling) {
-                document.getElementById('move-to-right-picture').style.display = "none";
-            } else {
-                document.getElementById('move-to-right-picture').style.display = "block";
-            }
-        }
-    </script>
+    <script src="js/gallery.js"></script>
 </body>
 </html>

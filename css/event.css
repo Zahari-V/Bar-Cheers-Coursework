@@ -16,3 +16,19 @@
 .event-card > div {
     padding: 20px;
 }
+
+.event-card > div > h2 {
+    margin-top: 0;
+}
+
+.event-card .event-dates {
+    position: relative;
+    padding-left: 48px;
+}
+
+.event-card .event-dates .ico-calendar {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(0, -50%);
+}
