@@ -1,0 +1,89 @@
+.twins-cards {
+    position: relative;
+    margin: 0px 0px 180px;
+}
+
+#content article {
+    background-color: white;
+    color: black;
+    padding: 20px;
+    border-radius: 16px;
+    text-align: justify;
+    margin-bottom: 20px;
+}
+
+#content .twins-cards article {
+    width: 70%;
+}
+
+.twins-cards article:nth-child(odd) header,
+.twins-cards article:nth-child(odd) p {
+    text-align: left;
+}
+
+.twins-cards article:nth-child(even) header,
+.twins-cards article:nth-child(even) p {
+    text-align: right;
+}
+
+.twins-cards header {
+    text-align: center;
+}
+
+#content .twins-cards article:nth-child(odd) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding-right: 42%;
+}
+
+#content .twins-cards article:nth-child(even) {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    padding-left: 42%; 
+}
+
+#content > article > header {
+    text-align: center;
+}
+
+.twins-cards img {
+    position: relative;
+    top: 90px;    
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 592px;
+    height: 206px;
+}
+
+#content article h2 {
+    margin-bottom: 20px;
+}
+
+#bartender-pictures {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+#bartender-pictures > div > div {
+    border: 10px solid #561503;
+    border-radius: 20px;
+}
+
+#bartender-pictures > div > div > img {
+    height: 540px;
+    width: 380px;
+    border: 10px solid white;
+    border-radius: 20px;
+}
+
+#bartender-pictures p {
+    text-align: center;
+}
+
+#sponsor-section img:nth-child(odd) {
+    position: relative;
+    bottom: 25px;
+}
